@@ -1,7 +1,7 @@
 # 🚀 Antigravity Autopilot
 
-[![VS Marketplace](https://img.shields.io/visual-studio-marketplace/v/timteh.antigravity-autopilot?label=VS%20Marketplace&color=blue)](https://marketplace.visualstudio.com/items?itemName=timteh.antigravity-autopilot)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/timteh.antigravity-autopilot?color=green)](https://marketplace.visualstudio.com/items?itemName=timteh.antigravity-autopilot)
+[![VS Marketplace](https://img.shields.io/visual-studio-marketplace/v/timteh.antigravity-autopilot-os?label=VS%20Marketplace&color=blue)](https://marketplace.visualstudio.com/items?itemName=timteh.antigravity-autopilot-os)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/timteh.antigravity-autopilot-os?color=green)](https://marketplace.visualstudio.com/items?itemName=timteh.antigravity-autopilot-os)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Auto-accept agent steps in Antigravity IDE — no CDP required.**
@@ -102,14 +102,14 @@ Or do it manually:
 ### Default Accept Patterns
 ```
 ^Run, ^Accept, ^Accept All$, ^Allow$, ^Allow this conversation$,
-^Continue$, ^Keep All$, ^Yes$, ^Scroll to bottom$
+^Continue$, ^Keep All$, ^Yes$, ^Scroll to bottom$,
+^Send all$, ^Always Allow$, ^Always run$
 ```
 
 ### Default Reject Patterns (Safety Net)
 ```
 ^Reject, ^Cancel$, ^Deny, ^Delete, ^Remove, ^Discard, ^Close,
-^Minimize$, ^Maximize$, ^Always run, ^Always allow, ^Ask every,
-^Review Changes$
+^Minimize$, ^Maximize$, ^Review Changes$
 ```
 
 ---
