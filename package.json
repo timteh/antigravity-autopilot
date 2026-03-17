@@ -36,7 +36,7 @@
     "ai-coding",
     "yolo-mode"
   ],
-  "activationEvents": ["*"],
+  "activationEvents": ["onStartupFinished"],
   "main": "./extension.js",
   "contributes": {
     "commands": [
@@ -92,6 +92,7 @@
             "^Run",
             "^Accept",
             "^Accept All$",
+            "^Send all",
             "^Allow$",
             "^Allow this conversation$",
             "^Continue$",
