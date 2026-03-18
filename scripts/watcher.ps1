@@ -17,6 +17,19 @@ param(
 Add-Type -AssemblyName UIAutomationClient
 Add-Type -AssemblyName UIAutomationTypes
 
+# Win32 API for foreground window detection — prevents focus stealing
+Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+public class FocusHelper {
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetForegroundWindow();
+
+    [DllImport("user32.dll")]
+    public static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint processId);
+}
+"@
+
 # ====== Button Patterns ======
 # Configurable via environment variables (set by extension.js)
 # or defaults below
@@ -264,6 +277,18 @@ try {
             } else {
                 Write-Status "Found IDE: '$($ideWindow.Current.Name)'"
             }
+        }
+
+        # Only click when IDE is the foreground window — prevents focus stealing
+        $fgHwnd = [FocusHelper]::GetForegroundWindow()
+        $fgPid = [uint32]0
+        [FocusHelper]::GetWindowThreadProcessId($fgHwnd, [ref]$fgPid) | Out-Null
+
+        $idePid = $ideWindow.Current.ProcessId
+        if ($fgPid -ne $idePid) {
+            # IDE is not focused, skip clicking to avoid stealing focus
+            Start-Sleep -Milliseconds $IntervalMs
+            continue
         }
 
         # Scan for accept buttons

@@ -149,11 +149,11 @@ function stopWatcher() {
 function updateStatusBar(running) {
     if (running) {
         statusBarItem.text = '$(rocket) Autopilot ON';
-        statusBarItem.tooltip = 'Antigravity Autopilot is active — click to stop';
+        statusBarItem.tooltip = 'Autopilot is auto-clicking agent buttons — click to DISABLE (Ctrl+Shift+A)';
         statusBarItem.backgroundColor = undefined;
     } else {
         statusBarItem.text = '$(debug-pause) Autopilot OFF';
-        statusBarItem.tooltip = 'Antigravity Autopilot is paused — click to start';
+        statusBarItem.tooltip = 'Autopilot is paused — click to ENABLE (Ctrl+Shift+A)';
         statusBarItem.backgroundColor = new vscode.ThemeColor('statusBarItem.warningBackground');
     }
 }

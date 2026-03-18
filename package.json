@@ -57,6 +57,13 @@
         "title": "Antigravity Autopilot: Show Status"
       }
     ],
+    "keybindings": [
+      {
+        "command": "antigravity-autopilot.toggle",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a"
+      }
+    ],
     "configuration": {
       "title": "Antigravity Autopilot",
       "properties": {

@@ -3,7 +3,14 @@
 ## [1.1.0] — 2026-03-18
 
 ### Added
+
 - `^Retry$` pattern to default accept list — auto-clicks "Retry" when an agent task fails
+- Default keybinding `Ctrl+Shift+A` (`Cmd+Shift+A` on macOS) to toggle Autopilot on/off
+
+### Fixed
+
+- **Focus-stealing bug**: Autopilot no longer clicks buttons when the IDE is not the active foreground window — prevents interrupting typing in Chrome, terminals, or other apps
+- Status bar tooltip now shows keybinding hint and clearer DISABLE/ENABLE language
 
 ## [1.0.0] — 2026-03-17
 
