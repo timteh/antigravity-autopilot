@@ -50,7 +50,8 @@ Or do it manually:
 
 ### 3. Use It
 
-- **Status bar**: Click `$(rocket) Autopilot ON` / `$(debug-pause) Autopilot OFF` to toggle
+- **Status bar**: Click `Autopilot ON` / `Autopilot OFF` to toggle
+- **Keyboard shortcut**: `Ctrl+Shift+A` (`Cmd+Shift+A` on macOS) — instant toggle
 - **Command palette**: `Ctrl+Shift+P` → "Antigravity Autopilot: Start/Stop/Toggle"
 - **Auto-start**: Enabled by default — starts when Antigravity opens
 
@@ -80,10 +81,11 @@ Or do it manually:
 ```
 
 1. **Polls** the IDE window's accessibility tree every 800ms
-2. **Matches** button names against configurable accept/reject regex patterns
-3. **Clicks** matching buttons via `InvokePattern.Invoke()` — no mouse, no focus steal
-4. **Cooldown** prevents re-clicking the same button within 10 seconds
-5. **Auto-scrolls** the chat to keep up with agent output (3s cooldown)
+2. **Focus-aware**: Only clicks when the IDE is the foreground window — won't interrupt other apps
+3. **Matches** button names against configurable accept/reject regex patterns
+4. **Clicks** matching buttons via `InvokePattern.Invoke()` — no mouse, no focus steal
+5. **Cooldown** prevents re-clicking the same button within 10 seconds
+6. **Auto-scrolls** the chat to keep up with agent output (3s cooldown)
 
 ---
 
@@ -102,7 +104,7 @@ Or do it manually:
 ### Default Accept Patterns
 ```
 ^Run, ^Accept, ^Accept All$, ^Allow$, ^Allow this conversation$,
-^Continue$, ^Keep All$, ^Yes$, ^Scroll to bottom$,
+^Continue$, ^Keep All$, ^Yes$, ^Retry$, ^Scroll to bottom$,
 ^Send all$, ^Always Allow$, ^Always run$
 ```
 
